@@ -16,6 +16,7 @@ app.use(express.json());
 app.use("/api/products", productRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/inquiries", inquiryRoutes);
+app.use("/uploads", express.static("uploads"));
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB Connected"))
